@@ -1,0 +1,81 @@
+@import 'reset';
+
+#picross {
+	font-family: Arial, sans-serif;
+
+	width: 100%;
+	max-width: 960px;
+	margin: 0px auto;
+
+	display: table;
+    border-collapse:collapse;
+}
+
+.line {
+	display:table-row;
+}
+
+.cell {
+	display: table-cell;
+	width: 20px;
+	height: 20px;
+	margin: 0px;
+
+	border: 1px solid #3a3a3a;
+	border-collapse : collapse;
+    box-sizing: border-box;
+
+	text-align: center;
+
+	&.filled {
+		background-color: #3a3a3a;
+	}
+
+	&.crossed {
+		background-color: #cccccc;
+	}
+}
+
+
+#preview {
+	display: inline-block;
+	border: 1px solid #3a3a3a;
+}
+
+#preview .cell {
+	width: 10px;
+	height: 10px;
+
+	border: none;
+}
+
+#hints {
+	display: inline-block;
+
+	&.vertical {
+		text-align: right;
+		
+		li {
+			height: 20px;
+
+			div {
+				display: inline-block;
+				text-align: center;
+				width: 20px;
+			}
+		}
+	}
+
+	&.horizontal {
+		text-align: center;
+
+		li {
+			display: inline-block;
+			width: 20px;
+
+			div {
+				height: 20px;
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+  "name": "vuejs-picross",
+  "version": "1.0.0",
+  "description": "",
+  "main": "picross.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c8rriboo/vuejs-picross.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c8rriboo/vuejs-picross/issues"
+  },
+  "homepage": "https://github.com/c8rriboo/vuejs-picross#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.2.0"
+  }
+}

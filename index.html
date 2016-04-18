@@ -6,27 +6,46 @@
 		<meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"	>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="assets/css/app.css">
 
 	</head>
 	<body>
-		<div class="container">
-			<div id="picross">
-				<div>
-					{{ valid | json }}
+		<div id="picross">
+			<div>
+				{{ valid | json }}
+			</div>
+			
+			<div id="preview">
+				<div class="line" v-for="(line_key, line) in grid">
+					<div v-for="(cell_key, cell) in line"
+						 track-by="$index"
+						 :class="getCellCssClasses(cell)"
+					></div>
 				</div>
-				
-				<div id="preview">
-					<div class="line" v-for="(line_key, line) in grid">
-						<div v-for="(cell_key, cell) in line"
-							 track-by="$index"
-							 :class="getCellCssClasses(cell)"
-						></div>
-					</div>
+			</div>
+
+			<br />
+
+			<div id="schema">
+				<div id="hints" class="vertical">
+					<ul>
+						<li v-for="hint in hints.x">
+							<div v-for="hnt in hint" track-by="$index">{{ hnt }}</div>
+						</li>
+					</ul>
 				</div>
 
 				<br />
+				<hr />
+				<br />
+
+				<div id="hints" class="horizontal">
+					<ul>
+						<li v-for="hint in hints.y">
+							<div v-for="hnt in hint" track-by="$index">{{ hnt }}</div>
+						</li>
+					</ul>
+				</div>
 
 				<div id="grid">
 					<div class="line" v-for="(line_key, line) in grid">
@@ -39,10 +58,9 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
-		<script src="picross.js"></script>
+		<script src="assets/js/picross.js"></script>
 	</body>
 </html>
